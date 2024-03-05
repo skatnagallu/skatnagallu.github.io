@@ -10,10 +10,17 @@
         color: #333;
         margin: 0;
         padding: 0;
-        background-image: url('https://drive.google.com/file/d/1z9Brxndkkm4utEjkuRJGH2KuXqyJCNnf/view?usp=sharing');
+        background-image: url(images/background.webp);
+        /* background-image: url('https://lh3.googleusercontent.com/drive-viewer/AKGpihYXStfupZkgC_FCHSbqirivr6T77ZGruNMbmhOcNIProUMeDRg9JLjoseXAejVbXYKKMqO9ccy3A-s-eGRPMMrDhzkBXw=s1600');
+        /* background-image: url('https://lh3.googleusercontent.com/drive-viewer/AKGpihYG5YRGdGJwXvDB6h3gBo3Ewng_qoda9l3sct74DKtpEQI2vlhzDfXC8TILq3d9BgZGoaEHn-K9IF1OeRgpKoIAkDqUwA=s1600'); */
         background-size: cover;
         background-attachment: fixed;
     }
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 70px;
+    }
+
     .container {
         max-width: 800px;
         margin: auto;
@@ -24,21 +31,188 @@
         text-align: center;
         padding: 50px 0;
     }
-    h1, h2 {
+    h1 {
         margin: 0;
+        font-size: xx-large;
+    }
+    h2 {
+        margin: 0;
+        font-size: larger;
     }
     p {
         line-height: 1.6;
+        color: #252525de;
     }
+    .banner {
+        background-color: #f8f8f8e4; /* Light grey background */
+        padding: 10px 0; /* Padding above and below the links */
+        text-align: center; /* Center the links */
+        position: fixed; /* Fix the banner at the top of the page */
+        width: 100%; /* Full width */
+        top: 0; /* Align to the top */
+        z-index: 1000; /* Ensure it stays on top of other content */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Add a subtle shadow for depth */
+    }
+
+    .banner a {
+        margin: 0 15px; /* Space out the links */
+        color: #333; /* Dark text for contrast */
+        text-decoration: none; /* Remove underline from links */
+        font-size: 16px; /* Slightly larger text for readability */
+    }
+
+    .banner a:hover {
+        color: #0077cc; /* Highlight links on hover */
+    }
+
     .section {
         margin-bottom: 50px;
     }
-    .publications {
-        list-style-type: none;
+    .section {
+                transition: opacity 0.7s ease; /* Smooth transition for opacity changes */
+            }
+
+    .section:hover {
+        opacity: 1.1; /* Change the opacity to a higher value when hovered */
+        font-size: 1.1em;    
+    }
+    .section p:hover {
+        color: #000000;
+    }
+
+    .about-me-text {
+    text-align: justify;
+    }
+    .experience-list {
+        list-style-type: none; /* Removes default list styling */
         padding: 0;
     }
+
+    .experience-item {
+        display: flex;
+        align-items: center; /* Ensures vertical alignment */
+        margin-bottom: 15px; /* Space between items */
+    }
+
+
+    .year {
+        flex-basis: 20%; /* Adjusts the width of the year part */
+        text-align: center; /* Ensures the text is left-aligned */
+    }
+
+    .role-company {
+        flex-grow: 1; /* Allows this part to take up the remaining space */
+        text-align: center; /* Aligns the role and company text to the left */
+    }
+
+    .department {
+        font-style: italic; /* Example style to differentiate the department */
+    }
+    .role, .company, .department {
+        font-weight: bold; /* Optional: Makes the role and company stand out */
+    }
+    .department, .company {
+        display: inline; /* Keeps department and company on the same line */
+        margin-right: 5px; /* Optional: Adds some space after the department */
+    }
+    .role-description {
+        margin-top: 8px; /* Add some space between the role/company and the description */
+    }
+    .vertical-line {
+        border-left: 2px solid #383838; /* Creates the vertical line */
+        height: 70px; /* Adjust based on your design needs */
+        margin-left: 15px; /* Space from the year */
+        margin-right: 15px; /* Space from the role/company */
+    }
+    .no-underline-link {
+        color: inherit; /* Makes the link use the parent text color */
+        text-decoration: none; /* Removes the underline */
+    }
+    .no-underline-link:hover {
+        cursor: pointer; /* Changes cursor to indicate it's clickable */
+        text-decoration: none; /* Ensures underline doesn't reappear on hover */
+    }
     .publications li {
-        margin-bottom: 10px;
+            margin-bottom: 10px;
+            list-style-type: disc; /* Ensures bullet points are displayed */
+            list-style-position: inside; /* Adjusts bullet position */
+            transition: font-size 0.3s ease; /* Smooth transition for font-size change */
+    }
+        
+    .publications li:hover {
+        font-size: 1.1em; /* Enlarges font on hover */
+        color: #000000;
+        cursor: pointer; /* Changes cursor to indicate clickable */
+    }
+    .contacts {
+        list-style: none; /* Remove default list styling */
+        padding: 0;
+        margin: 0;
+        display: flex; /* Align items in a row */
+        justify-content: center; /* Center the items horizontally */
+        gap: 20px; /* Optional: adds space between items */
+    }
+
+    .contacts link {
+        display: flex; /* Ensures the <li> content is inline */
+        align-items: center; /* Vertically centers the logo with the text */
+    }
+
+    .contacts a {
+        display: flex; /* Keeps items inline and allows the use of flexbox properties */
+        align-items: center; /* Aligns the logo and text vertically */
+        text-decoration: none; /* Removes underline from links */
+        color: inherit; /* Inherits the text color from the parent element */
+        transition: transform 0.3s ease; /* Smooth transition for the transform */
+    }
+
+    .contacts a:hover {
+        transform: scale(1.2); /* Enlarges both the logo and text on hover */
+        color: #000000;
+    }
+
+
+    .contact-logo {
+        margin-right: 8px; /* Adds space between the logo and the text */
+        width: 1em; /* Sets the width of the logo relative to the font size */
+        height: auto; /* Maintains the aspect ratio of the logo */
+        transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+    }
+
+    .contact-logo:hover {
+        transform: scale(1.3); /* Slightly enlarges the logo on hover */
+    }
+
+
+    /* Container holding the carousel, ensuring it's centered and has a specific max width */
+    .image-carousel-container {
+        width: 100%;
+        max-width: 800px;
+        margin: auto;
+        overflow: hidden; /* Hide overflow to maintain a clean look */
+        position: relative; /* Needed for absolute positioning of images */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Style for the images within the carousel */
+    .image-carousel-container img {
+        width: 100%; /* Make the image responsive to the container's width */
+        height: auto; /* Maintain aspect ratio */
+        transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition for fading and zoom */
+        will-change: transform, opacity; /* Hint for browsers to optimize */
+    }
+
+    /* Zoom effect on hover */
+    .image-carousel-container img:hover {
+        transform: scale(1.05); /* Slightly increase the image size */
+    }
+
+    /* Since images are wrapped in <a>, ensure links have no text decoration */
+    .image-carousel-container a {
+        text-decoration: none; /* Remove underline from links */
+        display: block; /* Make the anchor block level for proper sizing */
     }
     .profile-pic {
         display: block;
@@ -59,32 +233,185 @@
 </style>
 </head>
 <body>
+    <div class="banner">
+        <a href="#aboutMe">About Me</a>
+        <a href="#experience">Experience</a>
+        <a href="#researchProjects">Research Projects</a>
+        <a href="#newestPublications">Newest Publications</a>
+        <a href="#contact">Contact & Profiles</a>
+        
+        <!-- Add more links as needed -->
+    </div>
 <div class="container">
     <header>
-        <img src='https://drive.google.com/file/d/1XBNak-sIuuOJaFExESaGrvkGgwfs4YLa/view?usp=sharing' alt="Shyam Katnagallu" class="profile-pic">
+        <img src='https://lh3.googleusercontent.com/drive-viewer/AKGpihZY-w4nWcSxX4JdIDkZh3XUsUTA681OfZaD5ajBxs4NJ9mep67q-aVp7IIUH72mH0hVZJV7qGMHME22uvJDRftlTmvX8Q=s1600' alt="Shyam Katnagallu" class="profile-pic">
         <h1>Shyam Katnagallu</h1>
-        <p>Researcher at MPIE| Expert in Simulations and Material Characterization</p>
+        <p><a href="https://www.mpie.de/person/45305/3079071" target="_blank" class="no-underline-link">Researcher at MPIE</a>| Expert in Simulations and Material Characterization</p>
     </header>
-    <div class="section">
+    <div class="section" id="aboutMe">
         <h2>About Me</h2>
-        <p>Currently a Postdoctoral researcher focused on simulations of metal and alloy surfaces under high electric fields using density functional theory. With extensive background in experimental research using various characterization methods and a keen interest in the development of simulation and analysis methods for atom probe tomography and field ion microscopy. My research also encompasses the application of machine learning and data mining techniques in material science.</p>
+        <p class="about-me-text">Currently a Postdoctoral researcher focused on simulations of metal and alloy surfaces under high electric fields using density functional theory. With extensive background in experimental research using various characterization methods and a keen interest in the development of simulation and analysis methods for atom probe tomography and field ion microscopy. My research also encompasses the application of machine learning and data mining techniques in material science.</p>
     </div>
-    <div class="section">
-        <h2>Publications</h2>
-        <ul class="publications">
-            <li>"A machine learning framework for quantifying chemical segregation and microstructural features in atom probe tomography data" - Microsc. Microanal. Sep 2023.</li>
-            <li>"Accurate computation of chemical contrast in field ion microscopy" - Physical Review B June 2023.</li>
-            <!-- Add your publications here -->
+
+    <div class="section" id="experience">
+        <h2>Experience</h2>
+        <ul class="experience-list">
+            <li class="experience-item">
+                <div class="year">2021 June - Present</div>
+                <div class="vertical-line"></div>
+                <div class="role-company">
+                    <span class="role">Postdoctoral Researcher</span>,
+                    <span class="department">Computational Materials Design Department</span> at <span class="company">Max Planck Institute for Iron Research</span>
+                    <p class="role-description">Researching on simulating high electric field phenomena through first principles</p>
+                </div>
+            </li>
+            <li class="experience-item">
+                <div class="year">2019 Nov - 2021 May</div>
+                <div class="vertical-line"></div>
+                <div class="role-company">
+                    <span class="role">Research topic head</span>,
+                    <span class="department">Institute of Nano Technology</span> at <span class="company">Karlsruhe Institute of Technology</span>
+                    <p class="role-description">Lead a team in synthesizing and characterizing functional materials.</p>
+                </div>
+            </li>
+            <li class="experience-item">
+                <div class="year">2018 Oct - 2019 Oct</div>
+                <div class="vertical-line"></div>
+                <div class="role-company">
+                    <span class="role">Postdoctoral Researcher</span>,
+                    <span class="department">Material Physics and Alloy Design Department</span> at <span class="company">Max Planck Institute for Iron Research</span>
+                    <p class="role-description">Worked on characterization of Ni based superalloys</p>
+                </div>
+            </li>
+            <li class="experience-item">
+                <div class="year">2015 Oct - 2018 Oct</div>
+                <div class="vertical-line"></div>
+                <div class="role-company">
+                    <span class="role">Doctoral Fellow</span>,
+                    <span class="department">Material Physics and Alloy Design Department</span>  at <span class="company">Max Planck Institute for Iron Research</span>
+                    <p class="role-description">Doctoral thesis titled " On Chemically sensitive atomic scale imaging"</p>
+                </div>
+            </li>
+            <li class="experience-item">
+                <div class="year">2014 Aug - 2015 Aug</div>
+                <div class="vertical-line"></div>
+                <div class="role-company">
+                    <span class="role">Lecturer</span>, 
+                    <span class="department">Metallurgical and Materials Engineering Department</span>  at <span class="company">Rajiv Gandhi University of Knowledge Technologies </span>
+                    <p class="role-description">Taught undergraduate students. Conducted exams and labs.</p>
+                </div>
+            </li>
+            <!-- Add more experience items as needed -->
         </ul>
     </div>
-    <div class="section">
-        <h2>Contact & Profiles</h2>
-        <p>Email: <a href="mailto:shyam.katnagallu@gmail.com">shyam.katnagallu@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/skatnagallu" target="_blank">MyGithubProfile</a></p>
+    
+    
+    <div class="section" id="researchProjects">
+        <h2>Research Projects</h2>
+        <p>Below you can find links to various projects I've worked on, showcasing my research in material science and simulations.</p>
+        <ul class="publications">
+            <li><a href="APFIMProject/" target="_blank" class="no-underline-link"><strong>Analytical Field Ion Microscopy</a></li>
+            <li><a href="DFT Project/" target="_blank" class="no-underline-link">Ab Initio simulations of alloy surfaces under electric field</a></li>
+            <li><a href="MetallicGlasses Project/" target="_blank" class="no-underline-link">Functional materials</a></li>
+            <li><a href="ML Project/" target="_blank" class="no-underline-link">Machine learning and Data mining for APT and FIM</a></li>
+            <li><a href="Steels and HEA Project/" target="_blank" class="no-underline-link">Steels and High Entropy Alloys</a></li>
+            <li><a href="Superalloys Project/" target="_blank" class="no-underline-link">Superalloys</a></li>
+            <li><a href="Fun Projects/" target="_blank" class="no-underline-link">Fun and unpublished projects</strong></a></li>
+            <!-- Add more projects as needed -->
+        </ul>
+    </div> 
+    <div class="section">  
+        <div class="image-carousel-container" id="imageCarouselContainer">
+            <a id="carouselLink" href="APFIMProject/">
+                <img id="carouselImage" src="APFIMProject/publication_images/projectLogo.png" alt="Initial Image" />
+            </a>
+        </div>
     </div>
+    
+    <div class="section" id="newestPublications">
+        <h2>Latest Publications</h2>
+        <ul class="publications">
+            <li>"A machine learning framework for quantifying chemical segregation and microstructural features in atom probe tomography data" - <strong>Microsc. Microanal.</strong> Sep 2023. <a href="https://doi.org/10.1093/micmic/ozad086" target="_blank">View Publication</a></li>
+            <li>"Accurate computation of chemical contrast in field ion microscopy" - <strong>Physical Review B</strong> June 2023. <a href="https://doi.org/10.1103/PhysRevB.107.235413" target="_blank">View Publication</a></li>
+            <li>"Ab initio vacancy formation energies and kinetics at metal surfaces under high electric field" - <strong>Physical Review B</strong> Jan. 2023. <a href="https://doi.org/10.1103/PhysRevB.107.L041406" target="_blank">View Publication</a></li>
+            <li>"A new class of cluster-matrix nanocomposite Made of fully miscible components" - <strong>Advanced Materials</strong> Nov. 2022. <a href="https://doi.org/10.1002/adma.202208774" target="_blank">View Publication</a></li>
+            <li>"Dislocation exhaustion and ultra-hardening of nanograined metals by phase transformation at grain boundaries" - <strong>Nature Communications</strong> Sept. 2022. <a href="https://doi.org/10.1038/s41467-022-33257-1" target="_blank">View Publication</a></li>
+            <li>"Energetically deposited cluster assembly of metallic glasses" - <strong>Acta Materialia</strong> Sept. 2022. <a href="https://doi.org/10.1016/j.actamat.2022.118152" target="_blank">View Publication</a></li>
+            <li>"Chemical redistribution and change in crystal lattice parameters during stress relaxation annealing of the AD730TM superalloy" - <strong>Acta Materialia</strong> Sept. 2022. <a href="https://doi.org/10.1016/j.actamat.2022.118141" target="_blank">View Publication</a></li>
+            <li>"Grain boundary segregation induced precipitation in a non equiatomic nanocrystalline CoCuFeMnNi compositionally complex alloy" - <strong>Acta Materialia</strong> Nov. 2021. <a href="https://doi.org/10.1016/j.actamat.2021.117281" target="_blank">View Publication</a></li>
+            <li>"Revealing atomic-scale vacancy-solute interaction in nickel" - <strong>Scripta Materialia</strong> Oct. 2021. <a href="https://doi.org/10.1016/j.scriptamat.2021.114036" target="_blank">View Publication</a></li>
+            <li>"Three-Dimensional Atomically Resolved Analytical Imaging with a Field Ion Microscope" - <strong>Microscopy and Microanalysis</strong> Aug. 2021. <a href="https://doi.org/10.1017/S1431927621012381" target="_blank">View Publication</a></li>
+            <li>"A model to predict image formation in the three-dimensional field ion microscope" - <strong>Computer Physics Communications</strong> Mar. 2021. <a href="https://doi.org/10.1016/j.cpc.2020.107317" target="_blank">View Publication</a></li>
+            <!-- Add more publications as needed -->
+        </ul>       
+    </div>
+
+    <div class="section" id="contact">
+        <h2>Contact & Profiles</h2>
+    </div>
+    <div>
+        <p>Feel free to get in touch.</p> 
+        <ul class="contacts">
+            <link><a href="mailto:shyam.katnagallu@gmail.com"><img src="logos/gmail.png" alt="Email" class="contact-logo">Email</a></link>
+            <link><a href="https://github.com/skatnagallu" target="_blank"><img src="logos/github.png" alt="GitHub" class="contact-logo">MyGithubProfile</a></link>
+            <link><a href="https://scholar.google.de/citations?user=qcOq35EAAAAJ&hl=en" target="_blank"><img src="logos/googleScholar.png" alt="Google Scholar" class="contact-logo">GoogleScholar</a></link>
+            <link><a href="https://www.linkedin.com/in/shyam-katnagallu-826b4493/" target="_blank"><img src="logos/linkedin.png" alt="LinkedIn" class="contact-logo">LinkedIn</a></link>
+        </ul>
+    </div>
+    
     <footer>
         &copy; 2024 Shyam Katnagallu. All rights reserved.
     </footer>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const carouselContainer = document.getElementById('imageCarouselContainer');
+    const projects = [
+        {
+            imageUrl: "APFIMProject/publication_images/projectLogo.png",
+            projectUrl: "APFIMProject/",
+            altText: "Project 1"
+        },
+        {
+            imageUrl: "DFT Project/publication_images/bsckground.png",
+            projectUrl: "DFT Project/",
+            altText: "Project 2"
+        },
+        {
+            imageUrl: "https://lh3.googleusercontent.com/drive-viewer/AKGpihYXStfupZkgC_FCHSbqirivr6T77ZGruNMbmhOcNIProUMeDRg9JLjoseXAejVbXYKKMqO9ccy3A-s-eGRPMMrDhzkBXw=s1600",
+            projectUrl: "ML Project/",
+            altText: "Project 3"
+        },
+        // Add more projects as needed
+    ];
+
+    let currentIndex = 0;
+    const carouselImage = document.getElementById('carouselImage');
+    const carouselLink = document.getElementById('carouselLink');
+
+    function updateCarousel() {
+        // Fade out the current image
+        carouselImage.style.opacity = '0.5';
+
+        setTimeout(() => {
+            // Update to the next image and link after the fade-out completes
+            const project = projects[currentIndex];
+            carouselImage.src = project.imageUrl; // Update image source
+            carouselImage.alt = project.altText; // Update alt text
+            carouselLink.href = project.projectUrl; // Update link URL
+            
+            // Immediately start fading the image back in
+            carouselImage.style.opacity = '1';
+
+            // Move to the next project, looping back to the start if at the end
+            currentIndex = (currentIndex + 1) % projects.length;
+        }, 500); // This duration should match the CSS opacity transition time
+    }
+
+    // Start the carousel image update cycle
+    setInterval(updateCarousel, 4000);
+});
+
+</script>
 </body>
 </html>

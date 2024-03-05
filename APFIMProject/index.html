@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytical Field Ion Microscopy</title>
+    <style>
+        body {
+                font-family: Arial, sans-serif;
+                color: #333;
+                margin: 0;
+                padding: 0;
+                background-image: url(../images/background.webp);
+                /* background-image: url('https://lh3.googleusercontent.com/drive-viewer/AKGpihYXStfupZkgC_FCHSbqirivr6T77ZGruNMbmhOcNIProUMeDRg9JLjoseXAejVbXYKKMqO9ccy3A-s-eGRPMMrDhzkBXw=s1600');
+                /* background-image: url('https://lh3.googleusercontent.com/drive-viewer/AKGpihYG5YRGdGJwXvDB6h3gBo3Ewng_qoda9l3sct74DKtpEQI2vlhzDfXC8TILq3d9BgZGoaEHn-K9IF1OeRgpKoIAkDqUwA=s1600'); */
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            html {
+                scroll-behavior: smooth;
+                scroll-padding-top: 70px;
+            }
+            .banner {
+                background-color: #f8f8f8e4; /* Light grey background */
+                padding: 10px 0; /* Padding above and below the links */
+                text-align: center; /* Center the links */
+                position: fixed; /* Fix the banner at the top of the page */
+                width: 100%; /* Full width */
+                top: 0; /* Align to the top */
+                z-index: 1000; /* Ensure it stays on top of other content */
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Add a subtle shadow for depth */
+            }
+
+            .banner a {
+                margin: 0 15px; /* Space out the links */
+                color: #333; /* Dark text for contrast */
+                text-decoration: none; /* Remove underline from links */
+                font-size: 16px; /* Slightly larger text for readability */
+            }
+
+            .banner a:hover {
+                color: #0077cc; /* Highlight links on hover */
+            }
+            .container {
+                max-width: 800px;
+                margin: auto;
+                padding: 20px;
+                background: rgba(255, 255, 255, 0.8);
+            }
+            img {
+                width: 100%; /* Makes the image responsive and matches the container's width */
+                height: auto; /* Maintains the aspect ratio of the image */
+            }
+            header {
+                text-align: center;
+                padding: 50px 0;
+            }
+            h1, h2 {
+                margin: 0;
+            }
+            p {
+                line-height: 1.6;
+            }
+            .section {
+                margin-bottom: 50px;
+            }
+            .section {
+                transition: opacity 0.7s ease; /* Smooth transition for opacity changes */
+            }
+
+            .section:hover {
+                opacity: 1.1; /* Change the opacity to a higher value when hovered */
+                font-size: 1.1em;
+            }
+            .about-me-text {
+            text-align: justify;
+            }
+            /* .publications {
+                list-style-type: none;
+                padding: 0;
+            }
+            .publications li {
+                margin-bottom: 10px;
+            } */
+            .no-underline-link {
+                color: inherit; /* Makes the link use the parent text color */
+                text-decoration: none; /* Removes the underline */
+            }
+            .no-underline-link:hover {
+                cursor: pointer; /* Changes cursor to indicate it's clickable */
+                text-decoration: none; /* Ensures underline doesn't reappear on hover */
+            }
+            .publications li {
+            margin-bottom: 10px;
+            list-style-type: disc; /* Ensures bullet points are displayed */
+            list-style-position: inside; /* Adjusts bullet position */
+            transition: font-size 0.3s ease; /* Smooth transition for font-size change */
+            }
+        
+            .publications li:hover {
+                font-size: 1.1em; /* Enlarges font on hover */
+                cursor: pointer; /* Changes cursor to indicate clickable */
+            }
+            .publication {
+                margin-bottom: 10px; /* Space between publications */
+                transition: margin-bottom 0.5s ease; /* Smooth transition for spacing */
+            }
+
+            .publication:hover {
+                margin-bottom: 20px; /* Increase space to accommodate summary */
+            }
+            .publication-summary {
+                width: 80%;
+                max-height: 0;
+                overflow: hidden;
+                color: #003857;
+                text-align: justify;
+                margin: 0 auto;
+                padding: 10px 10px 10px 5px;
+                transition: max-height 0.5s ease-in-out;
+                opacity: 0;
+                transition: opacity 0.5s ease, max-height 0.5s ease-in-out;
+            }
+
+            .publication:hover .publication-summary {
+                max-height: 200px; /* Adjust based on your content */
+                opacity: 1;
+                font-size: 0.8em;
+            }
+            .publication:focus-within .publication-summary,
+            .publication:hover .publication-summary {
+                max-height: 200px;
+                opacity: 1;
+            }
+            .carousel-container {
+                width: 620px; /* Adjust based on total width including any padding/margins */
+                height: 320px; /* Slightly larger than the image to accommodate */
+                margin: 0 auto;
+                overflow: hidden;
+            }
+
+
+            .carousel-slide {
+                display: flex;
+                transition: transform 0.5s ease-in-out;
+            }
+
+            .carousel-slide a {
+                flex: 0 0 100%; /* Each link (and thus image) takes full container width */
+            }
+
+            .carousel-slide img {
+                width: 600px; /* Set your desired width */
+                height: 300px; /* Set your desired height */
+                object-fit: cover; /* Ensures the image covers the area, can be adjusted */
+            }
+            .carousel-slide img {
+                width: 100%; /* Make the image responsive to the container width */
+                height: auto; /* Maintain aspect ratio */
+                object-fit: cover;
+                transition: transform 0.5s ease; /* Smooth transition for the transform */
+                cursor: pointer; /* Optional: Changes the cursor to indicate the image can be interacted with */
+            }
+            .carousel-slide img:hover {
+                transform: scale(1.2); /* Adjust scale value to control zoom level */
+            }
+
+            @media (max-width: 768px) {
+                .carousel-container, .carousel-slide img {
+                    width: auto; /* Full width on smaller screens */
+                    height: 300px; /* Adjust height automatically */
+                }
+            }
+
+            footer {
+                text-align: center;
+                padding: 30px 0;
+                font-size: 0.8em;
+            }
+            a {
+                color: #0077cc;
+            }
+        </style>
+</head>
+
+<body>
+    <div class="banner">
+        <a href="../#researchProjects">Back to Projects</a>
+        <a href="#about">Project Description</a>
+        <a href="#Publications">Related Publications</a>
+        <a href="../">Home</a>
+        
+        <!-- Add more links as needed -->
+    </div>
+    <div class="container">
+    <header>
+    <h1>Analytical Field Ion Microscopy</h1>
+    <img src="publication_images/projectLogo.png" alt="Banner Image for Analytical FIM showing a FIM image of Tungsten surface" style="width:100%;">
+    </header>
+    <div class="section" id="about">
+        <h2>Project Description</h2>
+        <p class="about-me-text"> The predecessor of Atom probe tomography (APT), called the field ion microscopy (FIM) is known for its high spatial resolution, but at the expense of the chemical identity. To achieve improved spatial accuracy, data mining routines are developed here. Applying these routines, data extracted from a sequence of FIM images of W. The imaging distortions are analysed by comparing with atomistic and FIM image simulations, showing that the imaged atomic displacements are a consequence of the electrostatic field redistributions. To tackle the FIM's inability to discern between atoms of different chemical species, the development of a chemically-sensitive anlytical FIM (aFIM) was developed. This technique is used to show the segregation of Re to a dislocation in a creep deformed Ni alloy.
+        </p>
+    </div>
+    <div class="section" id="Publications">
+        <h2>Related Publications</h2>
+        <ul class="publications">
+            <li class="publication">"Three-Dimensional Atomically Resolved Analytical Imaging with a Field Ion Microscope" - <strong>Microscopy and Microanalysis</strong> July. 2021. <a href="https://doi.org/10.1017/S1431927621012381" target="_blank">View Publication</a>
+                <div class="publication-summary">The research showcases a hybrid experimental method combining atom probe tomography (APT) and field ion microscopy (FIM) to achieve atomic resolution with elemental discrimination, a feat neither technique can fully accomplish on its own. By utilizing two atom probe instruments—one with a straight flight path and another with a reflectron lens—for time-of-flight mass spectrometry alongside FIM, the study establishes protocols to distinguish field-evaporated signals from a large field-ionized background. This approach, termed analytical field ion microscopy (aFIM), addresses the challenges of accurately detecting and identifying individual ions, offering a unique solution for linking nanoscale chemical variations to physical properties.</div>
+            </li>
+            <li class="publication">"Revealing atomic-scale vacancy-solute interaction in nickel" - <strong>Scripta Materialia</strong> May. 2021. <a href="https://linkinghub.elsevier.com/retrieve/pii/S135964622100316X" target="_blank">View Publication</a>
+                <div class="publication-summary">
+                    The study focuses on the impact of crystalline imperfections on the physical and mechanical properties of materials, highlighting the challenge of imaging individual vacancies and their atomic surroundings. Using a creep-deformed binary Ni-2 at.% Ta alloy, the research employs atom probe tomography and field ion microscopy, enhanced by density-functional theory and time-of-flight mass spectrometry, to reveal a random Ta distribution and its positive correlation with vacancies. This supports the previously predicted positive solute-vacancy interactions through atomistic simulations.</div>
+            </li>
+            <li class="publication">"Imaging individual solute atoms at crystalline imperfections in metals" - <strong>New Journal of Physics</strong> Nov. 2019. <a href="https://doi.org/10.1088/1367-2630/ab5cc4" target="_blank">View Publication</a>
+                <div class="publication-summary">
+                    The study introduces an advanced method for chemistry-sensitive field-ion microscopy (FIM) by integrating it with time-of-flight mass-spectrometry (tof-ms) and data mining, termed analytical-FIM (A-FIM). This approach enables elemental identification and correlates it to FIM images, offering true atomic resolution and the ability to directly image individual atoms and crystalline defects that significantly influence material properties. A-FIM's capabilities are demonstrated through the identification of individual rhenium (Re) atoms within crystalline defects in Ni–Re alloys, aiding in understanding how Re enhances the durability of Ni-based superalloys at high temperatures.</div>
+            </li>
+            <li class="publication">"Impact of local electrostatic field rearrangement on field ionization" - <strong>Journal of Physics D.</strong> Feb. 2018. <a href="https://doi.org/10.1088/1361-6463/aaaba6" target="_blank">View Publication</a>
+                <div class="publication-summary">Field ion microscopy (FIM) achieves true atomic resolution imaging by utilizing the high charge density on surfaces to ionize gas atoms, a process enhanced by field evaporation. This study introduces a novel image processing algorithm that tracks individual atoms on the surface, allowing for quantitative analysis of atomic position shifts. Through a combination of experimental work and molecular dynamics simulations, it was confirmed that these shifts are tied to electrostatic field rearrangements affecting the ionization zone of imaging gas. The findings underscore significant implications for the advancement of 3D FIM data reconstruction, particularly for the precise quantification of lattice strains and the characterization of crystalline defects at the atomic level.</div>
+            </li>
+            <!-- Add more publications as needed -->
+        </ul>
+    </div>
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <a href="https://doi.org/10.1088/1361-6463/aaaba6" target="_blank"><img src="publication_images/Publication1.jpg" alt="Publication 1"></a>
+            <a href="https://doi.org/10.1088/1367-2630/ab5cc4" target="_blank"><img src="publication_images/Publication2.jpg" alt="Publication 2"></a>
+            <a href="https://linkinghub.elsevier.com/retrieve/pii/S135964622100316X" target="_blank"><img src="publication_images/Publication3.jpg" alt="Publication 3"></a>
+            <a href="https://doi.org/10.1017/S1431927621012381" target="_blank"><img src="publication_images/Publication4.jpg" alt="Publication 4"></a>
+            <!-- Add more images as needed -->
+        </div>
+    </div>    
+    <a href="../">Back to Portfolio</a>
+    <footer>
+        &copy; 2024 Shyam Katnagallu. All rights reserved.
+    </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Existing code for publication summaries
+            document.querySelectorAll('.publication').forEach(publication => {
+                let hoverTimeout;
+
+                publication.addEventListener('mouseenter', () => {
+                    clearTimeout(hoverTimeout);
+                    hoverTimeout = setTimeout(() => {
+                        publication.querySelector('.publication-summary').style.opacity = '1';
+                        publication.querySelector('.publication-summary').style.maxHeight = '200px';
+                        publication.querySelector('.publication-summary').style.fontSize = '0.8em';
+                    }, 700); // Delay in milliseconds
+                });
+
+                publication.addEventListener('mouseleave', () => {
+                    clearTimeout(hoverTimeout);
+                    publication.querySelector('.publication-summary').style.opacity = '0';
+                    publication.querySelector('.publication-summary').style.maxHeight = '0';
+                });
+            });
+
+            // Code for the carousel functionality
+            let currentIndex = 0;
+            const slides = document.querySelectorAll('.carousel-slide a');
+            const totalSlides = slides.length;
+
+            function moveToNextSlide() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                document.querySelector('.carousel-slide').style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+
+            // Auto-slide every 3 seconds
+            setInterval(moveToNextSlide, 3000);
+        });
+    </script>
+
+</body>
+</html>

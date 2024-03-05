@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytical Field Ion Microscopy</title>
+    <style>
+        body {
+                font-family: Arial, sans-serif;
+                color: #333;
+                margin: 0;
+                padding: 0;
+                background-image: url(../images/background.webp);
+                /* background-image: url('https://lh3.googleusercontent.com/drive-viewer/AKGpihYXStfupZkgC_FCHSbqirivr6T77ZGruNMbmhOcNIProUMeDRg9JLjoseXAejVbXYKKMqO9ccy3A-s-eGRPMMrDhzkBXw=s1600');
+                /* background-image: url('https://lh3.googleusercontent.com/drive-viewer/AKGpihYG5YRGdGJwXvDB6h3gBo3Ewng_qoda9l3sct74DKtpEQI2vlhzDfXC8TILq3d9BgZGoaEHn-K9IF1OeRgpKoIAkDqUwA=s1600'); */
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            html {
+                scroll-behavior: smooth;
+                scroll-padding-top: 70px;
+            }
+            .banner {
+                background-color: #f8f8f8e4; /* Light grey background */
+                padding: 10px 0; /* Padding above and below the links */
+                text-align: center; /* Center the links */
+                position: fixed; /* Fix the banner at the top of the page */
+                width: 100%; /* Full width */
+                top: 0; /* Align to the top */
+                z-index: 1000; /* Ensure it stays on top of other content */
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Add a subtle shadow for depth */
+            }
+
+            .banner a {
+                margin: 0 15px; /* Space out the links */
+                color: #333; /* Dark text for contrast */
+                text-decoration: none; /* Remove underline from links */
+                font-size: 16px; /* Slightly larger text for readability */
+            }
+
+            .banner a:hover {
+                color: #0077cc; /* Highlight links on hover */
+            }
+            .container {
+                max-width: 800px;
+                margin: auto;
+                padding: 20px;
+                background: rgba(255, 255, 255, 0.8);
+            }
+            img {
+                width: 100%; /* Makes the image responsive and matches the container's width */
+                height: auto; /* Maintains the aspect ratio of the image */
+            }
+            header {
+                text-align: center;
+                padding: 50px 0;
+            }
+            h1, h2 {
+                margin: 0;
+            }
+            p {
+                line-height: 1.6;
+            }
+            .section {
+                margin-bottom: 50px;
+            }
+            .section {
+                transition: opacity 0.7s ease; /* Smooth transition for opacity changes */
+            }
+
+            .section:hover {
+                opacity: 1.1; /* Change the opacity to a higher value when hovered */
+                font-size: 1.1em;
+            }
+            .about-me-text {
+            text-align: justify;
+            }
+            /* .publications {
+                list-style-type: none;
+                padding: 0;
+            }
+            .publications li {
+                margin-bottom: 10px;
+            } */
+            .no-underline-link {
+                color: inherit; /* Makes the link use the parent text color */
+                text-decoration: none; /* Removes the underline */
+            }
+            .no-underline-link:hover {
+                cursor: pointer; /* Changes cursor to indicate it's clickable */
+                text-decoration: none; /* Ensures underline doesn't reappear on hover */
+            }
+            .publications li {
+            margin-bottom: 10px;
+            list-style-type: disc; /* Ensures bullet points are displayed */
+            list-style-position: inside; /* Adjusts bullet position */
+            transition: font-size 0.3s ease; /* Smooth transition for font-size change */
+            }
+        
+            .publications li:hover {
+                font-size: 1.1em; /* Enlarges font on hover */
+                cursor: pointer; /* Changes cursor to indicate clickable */
+            }
+            footer {
+                text-align: center;
+                padding: 30px 0;
+                font-size: 0.8em;
+            }
+            a {
+                color: #0077cc;
+            }
+        </style>
+</head>
+
+<body>
+    <div class="banner">
+        <a href="#about">Project Description</a>
+        <a href="#Publications">Related Publications</a>
+        <a href="../#researchProjects">Back to Projects</a>
+        
+        <!-- Add more links as needed -->
+    </div>
+    <div class="container">
+    <header>
+    <h1>Analytical Field Ion Microscopy</h1>
+    <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihZtOvNBmPBSCNsrNbQX5YKF4cfEYukCyIZek-k5IX8WCp80aUB3qlJN2eSHFmWyhaMgZMzLnK5WCnWzEQ7ZVBWHHagvjw=s1600" alt="Banner Image for Analytical FIM showing a FIM image of Tungsten surface" style="width:100%;">
+    </header>
+    <div class="section" id="about">
+        <h2>Project Description</h2>
+        <p class="about-me-text"> The phenomenon of extremely strong electric fields, reaching approximately 10 volts per nanometer, causing the rupture of atomic bonds has been extensively investigated in molecular chemistry. When this concept is applied to crystalline systems, particularly material surfaces, it is termed as field evaporation. Understanding the precise mechanisms of field evaporation becomes more complex when dealing with crystalline structures. Field evaporation serves as the fundamental process enabling techniques like atom probe tomography (APT) and 3D field ion microscopy (3D-FIM). Achieving atomically accurate reconstructions through APT relies heavily on a thorough comprehension of how ions form and detach from the surface at an atomic level. To gain insight into this phenomenon, we conduct first-principles calculations on faceted surfaces subjected to intense electric fields, focusing on both pure metals and alloys.</p>
+    </div>
+    <div class="section" id="Publications">
+        <h2>Related Publications</h2>
+        <ul class="publications">
+            <li>"Revealing atomic-scale vacancy-solute interaction in nickel" - <strong>Scripta Materialia</strong> Oct. 2021. <a href="https://doi.org/10.1016/j.scriptamat.2021.114036" target="_blank">View Publication</a></li>
+            <li>"Three-Dimensional Atomically Resolved Analytical Imaging with a Field Ion Microscope" - <strong>Microscopy and Microanalysis</strong> Aug. 2021. <a href="https://doi.org/10.1017/S1431927621012381" target="_blank">View Publication</a></li>
+            <!-- Add more publications as needed -->
+        </ul>
+    </div>
+    <a href="../">Back to Portfolio</a>
+    <footer>
+        &copy; 2024 Shyam Katnagallu. All rights reserved.
+    </footer>
+    </div>
+</body>
+</html>
