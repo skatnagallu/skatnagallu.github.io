@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analytical Field Ion Microscopy</title>
+    <title>Superalloys</title>
     <style>
         body {
                 font-family: Arial, sans-serif;
@@ -101,6 +101,77 @@
                 font-size: 1.1em; /* Enlarges font on hover */
                 cursor: pointer; /* Changes cursor to indicate clickable */
             }
+            .publication {
+                margin-bottom: 10px; /* Space between publications */
+                transition: margin-bottom 0.5s ease; /* Smooth transition for spacing */
+            }
+
+            .publication:hover {
+                margin-bottom: 20px; /* Increase space to accommodate summary */
+            }
+            .publication-summary {
+                width: 80%;
+                max-height: 0;
+                overflow: hidden;
+                color: #003857;
+                text-align: justify;
+                margin: 0 auto;
+                padding: 10px 10px 10px 5px;
+                transition: max-height 0.5s ease-in-out;
+                opacity: 0;
+                transition: opacity 0.5s ease, max-height 0.5s ease-in-out;
+            }
+
+            .publication:hover .publication-summary {
+                max-height: 200px; /* Adjust based on your content */
+                opacity: 1;
+                font-size: 0.8em;
+            }
+            .publication:focus-within .publication-summary,
+            .publication:hover .publication-summary {
+                max-height: 200px;
+                opacity: 1;
+            }
+            .carousel-container {
+                width: 620px; /* Adjust based on total width including any padding/margins */
+                height: 320px; /* Slightly larger than the image to accommodate */
+                margin: 0 auto;
+                overflow: hidden;
+            }
+
+
+            .carousel-slide {
+                display: flex;
+                transition: transform 0.5s ease-in-out;
+            }
+
+            .carousel-slide a {
+                flex: 0 0 100%; /* Each link (and thus image) takes full container width */
+            }
+
+            .carousel-slide img {
+                width: 600px; /* Set your desired width */
+                height: 300px; /* Set your desired height */
+                object-fit: cover; /* Ensures the image covers the area, can be adjusted */
+            }
+            .carousel-slide img {
+                width: 100%; /* Make the image responsive to the container width */
+                height: auto; /* Maintain aspect ratio */
+                object-fit: cover;
+                transition: transform 0.5s ease; /* Smooth transition for the transform */
+                cursor: pointer; /* Optional: Changes the cursor to indicate the image can be interacted with */
+            }
+            .carousel-slide img:hover {
+                transform: scale(1.2); /* Adjust scale value to control zoom level */
+            }
+
+            @media (max-width: 768px) {
+                .carousel-container, .carousel-slide img {
+                    width: auto; /* Full width on smaller screens */
+                    height: 300px; /* Adjust height automatically */
+                }
+            }
+
             footer {
                 text-align: center;
                 padding: 30px 0;
@@ -114,33 +185,90 @@
 
 <body>
     <div class="banner">
+        <a href="../#researchProjects">Back to Projects</a>
         <a href="#about">Project Description</a>
         <a href="#Publications">Related Publications</a>
-        <a href="../#researchProjects">Back to Projects</a>
+        <a href="../">Home</a>
         
         <!-- Add more links as needed -->
     </div>
     <div class="container">
     <header>
-    <h1>Analytical Field Ion Microscopy</h1>
-    <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihZtOvNBmPBSCNsrNbQX5YKF4cfEYukCyIZek-k5IX8WCp80aUB3qlJN2eSHFmWyhaMgZMzLnK5WCnWzEQ7ZVBWHHagvjw=s1600" alt="Banner Image for Analytical FIM showing a FIM image of Tungsten surface" style="width:100%;">
+    <h1>Superalloys</h1>
+    <img src="publication_images/banner.png" alt="Banner Image for Analytical FIM showing a FIM image of Tungsten surface" style="width:100%;">
     </header>
     <div class="section" id="about">
         <h2>Project Description</h2>
-        <p class="about-me-text"> The phenomenon of extremely strong electric fields, reaching approximately 10 volts per nanometer, causing the rupture of atomic bonds has been extensively investigated in molecular chemistry. When this concept is applied to crystalline systems, particularly material surfaces, it is termed as field evaporation. Understanding the precise mechanisms of field evaporation becomes more complex when dealing with crystalline structures. Field evaporation serves as the fundamental process enabling techniques like atom probe tomography (APT) and 3D field ion microscopy (3D-FIM). Achieving atomically accurate reconstructions through APT relies heavily on a thorough comprehension of how ions form and detach from the surface at an atomic level. To gain insight into this phenomenon, we conduct first-principles calculations on faceted surfaces subjected to intense electric fields, focusing on both pure metals and alloys.</p>
+        <p class="about-me-text"> Steels and high entropy alloys are very important engineering materials. Understanding the phase separation and seggregation mechanisms in these alloys is extremely complex. And controlling them is even more challenging. However, it is critical to evaluate and understand the thermodynamics of these alloys. In this project, we have designed several thermo-mechanical treatments and characterization routines to understand the influence of various material defects and their interactions with wide range of alloying elemnts used in these materials.
+        </p>
     </div>
     <div class="section" id="Publications">
         <h2>Related Publications</h2>
         <ul class="publications">
-            <li>"Revealing atomic-scale vacancy-solute interaction in nickel" - <strong>Scripta Materialia</strong> Oct. 2021. <a href="https://doi.org/10.1016/j.scriptamat.2021.114036" target="_blank">View Publication</a></li>
-            <li>"Three-Dimensional Atomically Resolved Analytical Imaging with a Field Ion Microscope" - <strong>Microscopy and Microanalysis</strong> Aug. 2021. <a href="https://doi.org/10.1017/S1431927621012381" target="_blank">View Publication</a></li>
+            <li class="publication">"Understanding atom probe's analytical performance for iron oxides using correlation histograms and ab initio calculations" - <strong>New Journal of Physics</strong> Mar 2024. <a href="https://doi.org/10.1088/1367-2630/ad309e" target="_blank">View Publication</a>
+                <div class="publication-summary">
+                    Field evaporation from ionic or covalently bonded materials often leads to the emission of molecular ions. The metastability of these molecular ions, particularly under the influence of the intense electrostatic field (10^10 Vm-1), makes them prone to dissociation with or without an exchange of energy amongst them. These processes can affect the analytical performance of atom probe tomography (APT). For instance, neutral species formed through dissociation may not be detected at all or with a time of flight no longer related to their mass, causing their loss from the analysis. Here, we evaluated the changes in the measured composition of FeO, Fe2O3 and Fe3O4 across a wide range of analysis conditions. Possible dissociation reactions are predicted by density-functional theory (DFT) calculations considering the spin states of the molecules. The energetically favoured reactions are traced on to the multi-hit ion correlation histograms, to confirm their existence within experiments, using an automated Python-based routine. The detected reactions are carefully analysed to reflect upon the influence of these neutrals from dissociation reactions on the performance of APT for analysing iron oxides.</div>
+            </li>
+            <li class="publication">"A Machine Learning Framework for Quantifying Chemical Segregation and Microstructural Features in Atom Probe Tomography Data" - <strong>Microscopy and Microanalysis/strong> Aug. 2023. <a href="https://dx.doi.org/10.1093/micmic/ozad086" target="_blank">View Publication</a>
+                <div class="publication-summary">
+                    The paper introduces a multi-stage machine learning strategy that semi-automates this process by initially transforming APT data into voxels for composition analysis, followed by clustering to classify compositions and segment the microstructure in real space. This approach is showcased with a Sm–(Co,Fe)–Zr–Cu alloy, allowing for refined segmentation and detailed mapping of composition and microstructure, especially focusing on disentangling complex, intertwined precipitate phases using both unsupervised and trained machine learning methods.</div>
+            </li>
+            <li class="publication">"Advanced data mining in field ion microscopy" - <strong>Materials Characterization.</strong> Mar. 2018. <a href="https://doi.org/10.1016/j.matchar.2018.02.040" target="_blank">View Publication</a>
+                <div class="publication-summary">
+                    Field ion microscopy (FIM) is a technique that captures images of individual surface atoms using a strong electric field, but its broader adoption has been limited due to inadequate image processing and data extraction tools. Recent enhancements in imaging technologies and data mining, particularly through machine learning approaches, have sparked renewed interest in FIM for materials characterization, including the automated detection of atoms and lattice defects. This research involves the exploration of various machine learning algorithms and advanced image processing to improve data extraction from FIM images, discussing the results, limitations, and potential applications in enhancing spatial resolution through energy minimization techniques.</div>
+            </li>
             <!-- Add more publications as needed -->
         </ul>
     </div>
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <a href="https://doi.org/10.1088/1367-2630/ad309e" target="_blank"><img src="publication_images/publication1.png" alt="Publication 1"></a>
+            <a href="https://dx.doi.org/10.1093/micmic/ozad086" target="_blank"><img src="publication_images/mlpapt.png" alt="Publication 2"></a>
+            <a href="https://doi.org/10.1016/j.matchar.2018.02.040" target="_blank"><img src="publication_images/MLP.png" alt="Publication 3"></a>
+            <!-- Add more images as needed -->
+        </div>
+    </div>    
     <a href="../">Back to Portfolio</a>
     <footer>
         &copy; 2024 Shyam Katnagallu. All rights reserved.
     </footer>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Existing code for publication summaries
+            document.querySelectorAll('.publication').forEach(publication => {
+                let hoverTimeout;
+
+                publication.addEventListener('mouseenter', () => {
+                    clearTimeout(hoverTimeout);
+                    hoverTimeout = setTimeout(() => {
+                        publication.querySelector('.publication-summary').style.opacity = '1';
+                        publication.querySelector('.publication-summary').style.maxHeight = '200px';
+                        publication.querySelector('.publication-summary').style.fontSize = '0.8em';
+                    }, 700); // Delay in milliseconds
+                });
+
+                publication.addEventListener('mouseleave', () => {
+                    clearTimeout(hoverTimeout);
+                    publication.querySelector('.publication-summary').style.opacity = '0';
+                    publication.querySelector('.publication-summary').style.maxHeight = '0';
+                });
+            });
+
+            // Code for the carousel functionality
+            let currentIndex = 0;
+            const slides = document.querySelectorAll('.carousel-slide a');
+            const totalSlides = slides.length;
+
+            function moveToNextSlide() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                document.querySelector('.carousel-slide').style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+
+            // Auto-slide every 3 seconds
+            setInterval(moveToNextSlide, 3000);
+        });
+    </script>
+
 </body>
 </html>
