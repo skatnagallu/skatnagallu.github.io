@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Communication</title>
+    <style>
+        /* Inherit the same styles from your base template */
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-image: url(../images/background.webp);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px;
+        }
+        .banner {
+            background-color: #f8f8f8e4;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .banner a {
+            margin: 0 15px;
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .banner a:hover {
+            color: #0077cc;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+        }
+        header {
+            text-align: center;
+            padding: 50px 0;
+        }
+        h1, h2 {
+            margin: 0;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .section {
+            margin-bottom: 50px;
+            transition: opacity 0.7s ease;
+        }
+        .section:hover {
+            opacity: 1.1;
+            font-size: 1.1em;
+        }
+        .about-me-text {
+            text-align: justify;
+        }
+        .video-list {
+            list-style: none;
+            padding: 0;
+        }
+        .video-item {
+            margin-bottom: 30px;
+        }
+        iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+        }
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.8em;
+        }
+        a {
+            color: #0077cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <a href="../">Home</a>
+        <a href="#about">Description</a>
+        <a href="#videos">Videos</a>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Science Communication</h1>
+            <img src="../images/science_communication_banner.jpg" alt="Science Communication Banner" style="width:100%;">
+        </header>
+
+        <div class="section" id="about">
+            <h2>What is this about?</h2>
+            <p class="about-me-text">
+                I believe in simplifying science and making it accessible to everyone. This page features videos where I break down difficult physics and materials science topics using storytelling, visuals, and animations. These videos reflect my passion for teaching, curiosity, and fun.
+            </p>
+        </div>
+
+        <div class="section" id="videos">
+            <h2>My YouTube Videos</h2>
+            <ul class="video-list">
+                <li class="video-item">
+                    <iframe src="https://www.youtube.com/embed/IFMdrlOtS4k?si=5vcfqF9yoAy2_bSG" allowfullscreen></iframe>
+                    <p><strong>Why are soap bubbles round?</strong> &mdash; An intuitive explanation of surface tension and shape minimization.</p>
+                </li>
+                <li class="video-item">
+                    <iframe src="https://www.youtube.com/embed/L9gUYZj_gb8" allowfullscreen></iframe>
+                    <p><strong>The Electric Field of a Charged Slab</strong> &mdash; A deep dive into boundary conditions and electrostatics with animations.</p>
+                </li>
+                <!-- Add more video items as needed -->
+            </ul>
+        </div>
+
+        <a href="../">Back to Portfolio</a>
+
+        <footer>
+            &copy; 2024 Shyam Katnagallu. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
